@@ -1,1 +1,1 @@
-alert("Everything working");
+(()=>{"use strict";let e={name:"Carrier",length:5,timesHit:0,status:"sailing"};var t;console.log(e.timesHit++),console.log(e),(t=e).timesHit==t.length&&alert(`Gameover ${t.name} has been sunk`)})();
