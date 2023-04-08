@@ -1,11 +1,6 @@
-import { createShip, hit, isSunk } from "./factories/ships";
+import { ship, hit, isSunk, fleet } from "./factories/ships";
 
-let testShip = createShip('Carrier', 5, 0, 'sailing')
-
-console.log(hit(testShip))
-// console.log(hit(testShip))
-// console.log(hit(testShip))
-// console.log(hit(testShip))
-// console.log(hit(testShip))
-console.log(testShip)
-isSunk(testShip)
+console.log(fleet)
+hit(fleet[4])
+hit(fleet[4])
+isSunk(fleet)
