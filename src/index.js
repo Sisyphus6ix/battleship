@@ -1,6 +1,5 @@
-import { ship, hit, isSunk, fleet } from "./factories/ships";
+import { ship, fleet } from "./factories/ships";
 
-console.log(fleet)
-hit(fleet[4])
-hit(fleet[4])
-isSunk(fleet)
+let Carrier = new ship('Carrier', 5, 0, 'sailing')
+Carrier.hit(Carrier)
+console.log(Carrier)

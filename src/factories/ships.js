@@ -3,34 +3,29 @@ export function ship (name, length, timesHit, status) {
     this.length = length,
     this.timesHit = timesHit,
     this.status = status
+    
+    const hit = (ship) => { return ship.timesHit++ }
+
+    const isSunk = (ship) => {
+        if (ship.timesHit == ship.length) {
+            return alert(`Gameover ${name} has been sunk`)
+        }
+    }
 
     return {
         name,
         length,
         timesHit,
-        status
+        status,
+        hit,
+        isSunk
     }
 }
 
-export let fleet = [
+export const fleet = [
     new ship('Carrier', 5, 0, 'sailing'),
     new ship('Battleship', 4, 0, 'sailing'),
     new ship('Cruiser', 3, 0, 'sailing'),
     new ship('Submarine', 3, 0, 'sailing'),
     new ship('Destroyer', 2, 0, 'sailing')
 ]
-
-
-export const hit = (ship) => {
-    ship.timesHit++
-}
-
-export const isSunk = (ship) => {
-   for (let i = 0; i < ship.length; i++ ){
-    // console.log(ship[i])
-    if (ship[i].timesHit == ship[i].length) {
-        let sunkShip = ship[i]
-        alert(`${sunkShip.name} has been sunk`)
-    }
-   }
-}
