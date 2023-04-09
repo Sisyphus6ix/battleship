@@ -1,25 +1,25 @@
 export function ship (name, length, timesHit, status) {
-    this.name = name,
-    this.length = length,
-    this.timesHit = timesHit,
-    this.status = status
+    this.name = name;
+    this.length = length;
+    this.timesHit = timesHit;
+    this.status = status;
     
-    const hit = (ship) => { return ship.timesHit++ }
+    const hit = function() { 
+        this.timesHit++ 
 
-    const isSunk = (ship) => {
-        if (ship.timesHit == ship.length) {
-            return alert(`Gameover ${name} has been sunk`)
+        if (this.timesHit == this.length) {
+            this.status = 'sunk'
         }
     }
 
-    return {
-        name,
-        length,
-        timesHit,
-        status,
-        hit,
-        isSunk
+    const isSunk = function() {
+        if (this.timesHit === this.length) {
+            return alert(`Gameover ${name} has been sunk`)
+        }
     }
+    
+    this.hit = hit.bind(this);
+    this.isSunk = isSunk.bind(this);
 }
 
 export const fleet = [
