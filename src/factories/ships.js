@@ -1,4 +1,4 @@
-export function ship (name, length, timesHit, status) {
+export function Ship (name, length, timesHit, status) {
     this.name = name;
     this.length = length;
     this.timesHit = timesHit;
@@ -23,9 +23,9 @@ export function ship (name, length, timesHit, status) {
 }
 
 export const fleet = [
-    new ship('Carrier', 5, 0, 'sailing'),
-    new ship('Battleship', 4, 0, 'sailing'),
-    new ship('Cruiser', 3, 0, 'sailing'),
-    new ship('Submarine', 3, 0, 'sailing'),
-    new ship('Destroyer', 2, 0, 'sailing')
+    new Ship('Carrier', 5, 0, 'sailing'),
+    new Ship('Battleship', 4, 0, 'sailing'),
+    new Ship('Cruiser', 3, 0, 'sailing'),
+    new Ship('Submarine', 3, 0, 'sailing'),
+    new Ship('Destroyer', 2, 0, 'sailing')
 ]
