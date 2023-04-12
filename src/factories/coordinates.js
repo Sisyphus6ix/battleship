@@ -1,4 +1,4 @@
-export function Cordinates (x, y) {
+export function Coordinates (x, y) {
     this.x = x;
     this.y = y;
 
@@ -12,4 +12,4 @@ export function Cordinates (x, y) {
 
     this.getX = getX.bind(this)
     this.getY = getY.bind(this)
-}
+}   
