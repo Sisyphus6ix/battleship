@@ -1,13 +1,7 @@
-import { Cordinates } from "./factories/coordinates";
-import { ship, fleet } from "./factories/ships";
+import { Coordinates } from "./factories/coordinates";
+import { Ship, fleet } from "./factories/ships";
 
-// let Carrier = fleet[0]
-// Carrier.hit()
-// console.log(Carrier)
 
-// let test = new Coordinates(5, 2)
-// console.log(test.getY())
-
-// for (let i = 0; i < fleet.length; i++){
-//     console.log(fleet[i])
-// }
+let example = new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(10,10), new Coordinates(6, 6), new Coordinates(8, 8)])
+example.hit()
+console.log(example)

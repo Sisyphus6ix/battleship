@@ -1,9 +1,11 @@
-export function Ship (name, length, timesHit, status) {
+export function Ship (name, length, timesHit, status, coords) {
     this.name = name;
     this.length = length;
     this.timesHit = timesHit;
     this.status = status;
+    this.coords = [ coords ];
     
+    // function for adding to the ships times hit and changing the ships status to sunk
     const hit = function() { 
         this.timesHit++ 
 
@@ -12,6 +14,7 @@ export function Ship (name, length, timesHit, status) {
         }
     }
 
+    // function for alerting that a ship has sunk
     const isSunk = function() {
         if (this.timesHit === this.length) {
             return alert(`Gameover ${name} has been sunk`)
