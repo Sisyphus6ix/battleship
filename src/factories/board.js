@@ -11,15 +11,22 @@ export function Board (size) {
     this.boardSpaces = []
 
     const placeShip = function (theShip) {
-        console.log(theShip)
+        for (let i = 0; i < theShip.coords.length; i++){
+            let x = theShip.coords[i].getX()
+            let y = theShip.coords[i].getY()
+
+            console.log({ x , y })
+        }
+
+        boardSpaces.append(x,y)
     }
     
-    const recieveAttack = function (x, y) {
-        if (x && y == fleet.cords) {
-            console.log(`${fleet.name} has been hit`)
-        }
-    }
+    // const recieveAttack = function (x, y) {
+    //     if (x && y == fleet.cords) {
+    //         console.log(`${fleet.name} has been hit`)
+    //     }
+    // }
 
     this.placeShip = placeShip.bind(this)
-    this.recieveAttack = recieveAttack.bind(this)
+    // this.recieveAttack = recieveAttack.bind(this)
 }

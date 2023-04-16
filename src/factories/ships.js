@@ -24,11 +24,3 @@ export function Ship (name, length, timesHit, status, coords) {
     this.hit = hit.bind(this);
     this.isSunk = isSunk.bind(this);
 }
-
-export const fleet = [
-    new Ship('Carrier', 5, 0, 'sailing'),
-    new Ship('Battleship', 4, 0, 'sailing'),
-    new Ship('Cruiser', 3, 0, 'sailing'),
-    new Ship('Submarine', 3, 0, 'sailing'),
-    new Ship('Destroyer', 2, 0, 'sailing')
-]
