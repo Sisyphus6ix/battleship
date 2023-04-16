@@ -5,7 +5,7 @@ export function Board (size) {
     this.size = size
 
     // Empty array for storing ships
-    this.fleet = [fleet]
+    this.fleet = []
 
     // Empty array for storing spaces on the board
     this.boardSpaces = []
@@ -15,10 +15,9 @@ export function Board (size) {
             let x = theShip.coords[i].getX()
             let y = theShip.coords[i].getY()
 
-            console.log({ x , y })
+            console.log({x, y})
+            this.boardSpaces.push({x, y})
         }
-
-        boardSpaces.append(x,y)
     }
     
     // const recieveAttack = function (x, y) {

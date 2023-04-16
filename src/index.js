@@ -11,5 +11,5 @@ export const fleet = [
 ]
 
 let test = new Board(20)
-console.log(test)
 test.placeShip(fleet[0])
+console.log(test)
