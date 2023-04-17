@@ -24,9 +24,10 @@ export function Board (size) {
     }
     
     const recieveAttack = function (coord) {
+        console.log(coord)
+
         const x = coord.getX()
         const y = coord.getY()
-
         console.log({x , y})
     }
 
