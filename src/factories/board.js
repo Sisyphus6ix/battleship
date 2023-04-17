@@ -10,22 +10,26 @@ export function Board (size) {
     // Empty array for storing spaces on the board
     this.boardSpaces = []
 
+    // Function for placing the coordinates of a ship into my boardSpaces array 
+    // as well as the ship into my fleet array
     const placeShip = function (theShip) {
         for (let i = 0; i < theShip.coords.length; i++){
             let x = theShip.coords[i].getX()
             let y = theShip.coords[i].getY()
 
-            console.log({x, y})
+            // console.log({x, y})
             this.boardSpaces.push({x, y})
         }
+        this.fleet.push(theShip)
     }
     
-    // const recieveAttack = function (x, y) {
-    //     if (x && y == fleet.cords) {
-    //         console.log(`${fleet.name} has been hit`)
-    //     }
-    // }
+    const recieveAttack = function (coord) {
+        const x = coord.getX()
+        const y = coord.getY()
+
+        console.log({x , y})
+    }
 
     this.placeShip = placeShip.bind(this)
-    // this.recieveAttack = recieveAttack.bind(this)
+    this.recieveAttack = recieveAttack.bind(this)
 }
