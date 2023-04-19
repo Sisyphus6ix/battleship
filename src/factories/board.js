@@ -25,11 +25,24 @@ export function Board (size) {
     
     const recieveAttack = function (coord1, coord2) {
         let coordCheck = new Coordinates(coord1, coord2)
-        console.log(coordCheck)
+        // console.log(coordCheck)
 
         const x = coordCheck.getX()
         const y = coordCheck.getY()
-        console.log({x , y})
+        console.log('Check for these coordinates', {x , y})
+
+        // Checking to see which ship needs to get hit
+        for (let space of this.boardSpaces){
+            // console.log(space)
+            if (space.x == x && space.y == y){
+                console.log('These coordinates been hit', {x, y})
+            }
+        }
+
+        for (let boat of this.fleet){
+            console.log(boat.coords)
+            // if (boat.coords.x)
+        }
     }
 
     this.placeShip = placeShip.bind(this)
