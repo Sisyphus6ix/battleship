@@ -35,13 +35,22 @@ export function Board (size) {
         for (let space of this.boardSpaces){
             // console.log(space)
             if (space.x == x && space.y == y){
-                console.log('These coordinates been hit', {x, y})
+                console.log('There is a ship at these coordinates', {x, y})
             }
         }
 
+        // Searching all my ships in the fleet
         for (let boat of this.fleet){
-            console.log(boat.coords)
-            // if (boat.coords.x)
+            // console.log(boat.coords)
+        // Searching all of the coordinates on all of my ships
+        // Then attacking the ship that matches the searched up coordinates
+            for (let info of boat.coords){
+                // console.log(info)
+                if (info.x == x && info.y == y){
+                    console.log(`${boat.name} has been hit`)
+                    boat.hit()
+                }
+            }
         }
     }
 

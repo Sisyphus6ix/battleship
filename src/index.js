@@ -16,3 +16,4 @@ test.placeShip(fleet[1])
 console.log(test)
 
 test.recieveAttack(4, 5)
+console.log(test)
