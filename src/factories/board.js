@@ -23,11 +23,12 @@ export function Board (size) {
         this.fleet.push(theShip)
     }
     
-    const recieveAttack = function (coord) {
-        console.log(coord)
+    const recieveAttack = function (coord1, coord2) {
+        let coordCheck = new Coordinates(coord1, coord2)
+        console.log(coordCheck)
 
-        const x = coord.getX()
-        const y = coord.getY()
+        const x = coordCheck.getX()
+        const y = coordCheck.getY()
         console.log({x , y})
     }
 

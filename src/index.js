@@ -15,4 +15,4 @@ test.placeShip(fleet[0])
 test.placeShip(fleet[1])
 console.log(test)
 
-test.recieveAttack(3, 5)
+test.recieveAttack(4, 5)
