@@ -31,12 +31,13 @@ export function Board (size) {
 
         // Checking to see which ship needs to get hit
         const space = this.boardSpaces.filter((space) => space.x == x && space.y == y)
-        console.log(`${space[0].theShip.name} has been hit`)
-        space[0].theShip.hit()
-
-        // if (this.boardSpaces.filter((space) => space.x != x && space.y != y)){
-        //     this.boardSpaces.push({x, y, Status: 'Missed'})
-        // }
+        if (space == true) {
+            space[0].theShip.hit()
+            console.log(`${space[0].theShip.name} has been hit`)
+        } else {
+            console.log('The attack missed')
+            return this.boardSpaces.push({x, y, Status: 'Missed'})
+        }
     }
 
     this.placeShip = placeShip.bind(this)
