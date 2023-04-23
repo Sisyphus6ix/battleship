@@ -15,5 +15,6 @@ test.placeShip(fleet[0])
 test.placeShip(fleet[1])
 // console.log(test)
 
-test.recieveAttack(5, 2)
+test.recieveAttack(2, 2)
 console.log(test)
+// test.getFleetStatus()

@@ -1,5 +1,5 @@
 import { Coordinates } from "./coordinates"
-import { fleet } from "./ships"
+import { Ship, fleet } from "./ships"
 
 export function Board (size) {
     this.size = size
@@ -31,7 +31,7 @@ export function Board (size) {
 
         // Checking to see which ship needs to get hit
         const space = this.boardSpaces.filter((space) => space.x == x && space.y == y)
-        if (space == true) {
+        if (space.length > 0) {
             space[0].theShip.hit()
             console.log(`${space[0].theShip.name} has been hit`)
         } else {
@@ -40,6 +40,11 @@ export function Board (size) {
         }
     }
 
+    const getFleetStatus = function () {
+        console.log(this.fleet)
+    }
+
     this.placeShip = placeShip.bind(this)
     this.recieveAttack = recieveAttack.bind(this)
+    this.getFleetStatus = getFleetStatus.bind(this)
 }
