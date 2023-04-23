@@ -15,12 +15,12 @@ export function Ship (name, length, timesHit, status, coords) {
     }
 
     // function for alerting that a ship has sunk
-    const isSunk = function() {
+    const hasSunk = function() {
         if (this.timesHit === this.length) {
             return alert(`Gameover ${name} has been sunk`)
         }
     }
     
     this.hit = hit.bind(this);
-    this.isSunk = isSunk.bind(this);
+    this.hasSunk = hasSunk.bind(this);
 }

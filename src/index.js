@@ -13,7 +13,7 @@ export const fleet = [
 let test = new Board(20)
 test.placeShip(fleet[0])
 test.placeShip(fleet[1])
-console.log(test)
+// console.log(test)
 
-test.recieveAttack(4, 5)
+test.recieveAttack(5, 5)
 console.log(test)
