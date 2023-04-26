@@ -1,6 +1,7 @@
 import { Board } from "./factories/board";
 import { Coordinates } from "./factories/coordinates";
 import { Ship } from "./factories/ships";
+import { Player } from "./factories/player";
 
 export const fleet = [
     new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(10,10), new Coordinates(6, 6), new Coordinates(11, 8), new Coordinates(8,9)]),
@@ -10,16 +11,19 @@ export const fleet = [
     new Ship('Destroyer', 2, 0, 'sailing')
 ]
 
-let test = new Board(20)
-test.placeShip(fleet[0])
-test.placeShip(fleet[1])
+// let test = new Board(20)
+// test.placeShip(fleet[0])
+// test.placeShip(fleet[1])
+// // console.log(test)
+
+// test.recieveAttack(5, 5)
+// test.recieveAttack(5, 5)
+// test.recieveAttack(5, 5)
+// // test.recieveAttack(5, 5)
+// // test.recieveAttack(5, 5)
+// // console.log(test)
+// test.updateFleetStatus()
 // console.log(test)
 
-test.recieveAttack(5, 5)
-test.recieveAttack(5, 5)
-test.recieveAttack(5, 5)
-// test.recieveAttack(5, 5)
-// test.recieveAttack(5, 5)
-// console.log(test)
-test.updateFleetStatus()
-console.log(test)
+let AI = new Player('Computer')
+console.log(AI)
