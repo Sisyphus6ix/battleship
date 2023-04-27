@@ -2,6 +2,7 @@ import { Board } from "./factories/board";
 import { Coordinates } from "./factories/coordinates";
 import { Ship } from "./factories/ships";
 import { Player } from "./factories/player";
+import { boardRender } from "./dom/render";
 
 export const fleet = [
     new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(10,10), new Coordinates(6, 6), new Coordinates(11, 8), new Coordinates(8,9)]),
@@ -19,3 +20,5 @@ let AI = new Player('Computer')
 AI.gameBoard.placeShip(new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(10,10), new Coordinates(6, 6), new Coordinates(11, 8), new Coordinates(8,9)]),)
 AI.gameBoard.recieveAttack(5, 5)
 console.log({user, AI})
+
+boardRender(user)
