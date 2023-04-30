@@ -1,8 +1,10 @@
 import { Coordinates } from "./coordinates"
 import { Ship, fleet } from "./ships"
 
-export function Board (size) {
+export function Board (size, callback) {
     this.size = size
+
+    this.callback = callback
 
     // Empty array for storing ships
     this.fleet = []
@@ -19,6 +21,7 @@ export function Board (size) {
             this.boardSpaces.push({x, y, theShip})
         }
         this.fleet.push(theShip)
+        this.callback(this)
     }
     
     const recieveAttack = function (coord1, coord2) {
@@ -32,11 +35,13 @@ export function Board (size) {
         const space = this.boardSpaces.filter((space) => space.x == x && space.y == y)
         if (space.length > 0) {
             space[0].theShip.hit()
+            this.boardSpaces.push({x, y, Status: 'Hit'})
             console.log(`${space[0].theShip.name} has been hit`)
         } else {
             console.log('The attack missed')
-            return this.boardSpaces.push({x, y, Status: 'Missed'})
+            this.boardSpaces.push({x, y, Status: 'Missed'})
         }
+        this.callback(this)
     }
 
     const updateFleetStatus = function () {
@@ -48,6 +53,7 @@ export function Board (size) {
 
         // If the index of the ship is greater than -1 then this ship gets removed from my fleet array
         if (index > -1) this.fleet.splice(index, 1)
+        this.callback(this)
         return destroyedShip === undefined ? "" : destroyedShip.hasSunk();
     }
 

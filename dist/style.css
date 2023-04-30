@@ -1,18 +1,28 @@
 .board-container {
-    min-width: 300px;
-    min-height: 300px;
+    width: 350px;
+    height: 350px;
     border: 3px solid red;
-    display: grid;
-    /* grid-template-areas: "y-axis" "x-axis" "board"; */
+    /* display: grid;
+    grid-template-areas: "y-axis" "x-axis" "board";
     grid-template-columns: auto 1fr 1fr;
     grid-template-rows: auto 1fr 1fr;
-    /* gap: 5px; */
+    gap: 5px; */
 }
 
-.board {
-    background-color: black;
-    grid-area: board;
+.player1-board, .player2-board{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    /* background-color: black; */
+    /* grid-area: board;
     display: grid;
-    grid-template-columns: repeat(10 ,1fr);
-    border: solid red 3px;
+    grid-template-columns: repeat(10 ,1fr); */
+    border: solid blue 3px;
+}
+
+.ship-cell {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
 }
