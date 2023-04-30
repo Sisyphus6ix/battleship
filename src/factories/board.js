@@ -1,5 +1,4 @@
 import { Coordinates } from "./coordinates"
-import { Ship, fleet } from "./ships"
 
 export function Board (size, callback) {
     this.size = size

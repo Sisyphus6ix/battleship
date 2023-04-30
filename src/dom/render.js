@@ -4,6 +4,8 @@ export const boardRender = (boardContainer) => (board) => {
     
     console.log(board)
 
+    // Grabbing the coordinates from ships in my fleet and linking them to HTML
+    // If a coordinate has been hit then it changes the color of the coordinate to red
     for (let ship of board.fleet){
         // console.log(ship)
         for (let coords of ship.coords){
@@ -19,7 +21,7 @@ export const boardRender = (boardContainer) => (board) => {
                 return c.x === coords.x && c.y === coords.y && c.Status === 'Hit'
             })
             if (isHit){
-                console.log('Hit')
+                // console.log('Hit')
                 shipCell.style.backgroundColor = 'red'
             }
         }

@@ -3,22 +3,23 @@ import { Ship } from "./factories/ships";
 import { Player } from "./factories/player";
 
 export const fleet = [
-    new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(10,10), new Coordinates(6, 6), new Coordinates(11, 8), new Coordinates(8,9)]),
-    new Ship('Battleship', 4, 0, 'sailing', [new Coordinates(2,4), new Coordinates(4,5), new Coordinates(5,4), new Coordinates(7,7)]),
+    new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(4,5), new Coordinates(3, 5), new Coordinates(2, 5), new Coordinates(1,5)]),
+    new Ship('Battleship', 4, 0, 'sailing', [new Coordinates(2,4), new Coordinates(2,5), new Coordinates(2,6), new Coordinates(2,7)]),
     new Ship('Cruiser', 3, 0, 'sailing'),
     new Ship('Submarine', 3, 0, 'sailing'),
     new Ship('Destroyer', 2, 0, 'sailing')
 ]
+
 // Grabbing the player1 Board in HTML
 const player1Board = document.getElementsByClassName('player1-board')[0]
 let user = new Player('Player', player1Board)
-user.gameBoard.placeShip( new Ship('Battleship', 4, 0, 'sailing', [new Coordinates(2,4), new Coordinates(4,5), new Coordinates(5,4), new Coordinates(7,7)]))
+user.gameBoard.placeShip(new Ship('Battleship', 4, 0, 'sailing', [new Coordinates(2,4), new Coordinates(2,5), new Coordinates(2,6), new Coordinates(2,7)]))
 user.gameBoard.recieveAttack(2, 4)
 
 // Grabbing the player2 Board in HTML
 const player2Board = document.getElementsByClassName('player2-board')[0]
 let AI = new Player('Computer', player2Board)
-AI.gameBoard.placeShip(new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(10,10), new Coordinates(6, 6), new Coordinates(11, 8), new Coordinates(8,9)]),)
+AI.gameBoard.placeShip(new Ship('Carrier', 5, 0, 'sailing', [new Coordinates(5,5), new Coordinates(4,5), new Coordinates(3, 5), new Coordinates(2, 5), new Coordinates(1,5)]))
 AI.gameBoard.recieveAttack(5, 5)
 console.log({user, AI})
 
