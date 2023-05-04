@@ -2,7 +2,7 @@ export const boardRender = (boardContainer) => (board) => {
     // console.log(boardContainer)
     boardContainer.innerText = ''
     
-    console.log(board)
+    // console.log(board)
 
     // Grabbing the coordinates from ships in my fleet and linking them to HTML
     // If a coordinate has been hit then it changes the color of the coordinate to red

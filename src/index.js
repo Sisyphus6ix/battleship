@@ -15,6 +15,7 @@ const player1Board = document.getElementsByClassName('player1-board')[0]
 let user = new Player('Player', player1Board)
 user.gameBoard.placeShip(new Ship('Battleship', 4, 0, 'sailing', [new Coordinates(2,4), new Coordinates(2,5), new Coordinates(2,6), new Coordinates(2,7)]))
 user.gameBoard.recieveAttack(2, 4)
+user.gameBoard.recieveAttack(2, 5)
 
 // Grabbing the player2 Board in HTML
 const player2Board = document.getElementsByClassName('player2-board')[0]
